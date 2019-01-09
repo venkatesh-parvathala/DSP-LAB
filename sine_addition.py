@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import numpy as np
+F1=input("Frequency of sine wave 1:")
+F2=input("Frequency of sine wave 2:")
+F3=input("Frequency of sine wave 3:")
+fs=input("sampling Frequency:")
+n=np.arange(0,2000,1)
+x=np.sin(2* np.pi *F1*n/fs)
+plt.subplot(411)
+plt.plot(n,x,'b')
+y=np.sin(2*np.pi*F2*n/fs+15)
+plt.subplot(412)
+plt.plot(n,y,'y')
+a=np.sin(2*np.pi*F3*n/fs)
+plt.subplot(413)
+plt.plot(n,a)
+z=x+y+a
+plt.subplot(414)
+plt.plot(n,z)
+plt.show()
